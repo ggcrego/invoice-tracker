@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
 import { MessageSquare, Search } from 'lucide-react'
 import api from '@/lib/api'
 import type { DirectoryTool } from '@/types'
@@ -60,9 +59,9 @@ export default function ToolDirectory() {
                       <div key={sub.id} className="flex items-center justify-between text-sm">
                         <span>{sub.full_name}</span>
                         {sub.slack_user_id && (
-                          <Button variant="ghost" size="sm" asChild>
-                            <a href={`slack://user?id=${sub.slack_user_id}`}><MessageSquare className="h-3 w-3" /></a>
-                          </Button>
+                          <a href={`slack://user?id=${sub.slack_user_id}`} className="inline-flex items-center justify-center h-7 w-7 rounded-md hover:bg-muted">
+                            <MessageSquare className="h-3 w-3" />
+                          </a>
                         )}
                       </div>
                     ))}

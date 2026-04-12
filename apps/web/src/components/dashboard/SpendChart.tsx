@@ -11,7 +11,7 @@ export default function SpendChart({ data }: SpendChartProps) {
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="month" />
         <YAxis />
-        <Tooltip formatter={(value: number) => [`₹${value.toLocaleString('en-IN')}`, 'Spend']} />
+        <Tooltip formatter={(value) => [`₹${Number(value).toLocaleString('en-IN')}`, 'Spend']} />
         <Bar dataKey="amount" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>

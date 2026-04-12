@@ -1,11 +1,13 @@
 import { useInvoices } from '@/hooks/useInvoices'
 import InvoiceCard from '@/components/invoices/InvoiceCard'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { PlusCircle } from 'lucide-react'
 
 export default function InvoiceList() {
   const { invoices, loading } = useInvoices()
+
+  const navigate = useNavigate()
 
   if (loading) return <div className="animate-pulse">Loading invoices...</div>
 
@@ -13,8 +15,8 @@ export default function InvoiceList() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold">My Invoices</h2>
-        <Button asChild>
-          <Link to="/invoices/new"><PlusCircle className="h-4 w-4 mr-2" />New Invoice</Link>
+        <Button onClick={() => navigate('/invoices/new')}>
+          <PlusCircle className="h-4 w-4 mr-2" />New Invoice
         </Button>
       </div>
       {invoices.length === 0 ? (

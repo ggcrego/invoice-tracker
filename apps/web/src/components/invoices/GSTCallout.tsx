@@ -23,12 +23,10 @@ export default function GSTCallout() {
             <Copy className="h-4 w-4 mr-1" />
             Copy GSTIN
           </Button>
-          <Button variant="link" size="sm" asChild>
-            <a href="/admin/gst" target="_blank">
-              <ExternalLink className="h-4 w-4 mr-1" />
-              View details
-            </a>
-          </Button>
+          <a href="/admin/gst" target="_blank" className="inline-flex items-center text-sm text-primary hover:underline">
+            <ExternalLink className="h-4 w-4 mr-1" />
+            View details
+          </a>
         </div>
       </AlertDescription>
     </Alert>
