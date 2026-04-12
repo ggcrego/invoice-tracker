@@ -2,8 +2,8 @@
   "name": "api",
   "private": true,
   "scripts": {
-    "dev": "echo 'Use: make dev-api from root'",
+    "dev": "cd apps/api && pipenv run uvicorn app.main:app --reload --port 8000",
     "build": "echo 'No build step for Python API'",
-    "lint": "echo 'Run: ruff check . from apps/api'"
+    "lint": "cd apps/api && pipenv run ruff check ."
   }
 }
