@@ -4,7 +4,7 @@ from supabase import create_client
 from app.config import settings
 
 def get_supabase_client():
-    return create_client(settings.SUPABASE_URL, settings.SUPABASE_SERVICE_KEY)
+    return create_client(settings.SUPABASE_URL, settings.SUPABASE_SECRET_KEY)
 
 async def upload_invoice_file(file: UploadFile, company_id: uuid.UUID) -> tuple[str, str]:
     """
