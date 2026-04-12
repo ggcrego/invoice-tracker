@@ -1,0 +1,9 @@
+{
+  "name": "api",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Use: make dev-api from root'",
+    "build": "echo 'No build step for Python API'",
+    "lint": "echo 'Run: ruff check . from apps/api'"
+  }
+}
